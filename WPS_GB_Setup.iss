@@ -9,6 +9,8 @@
 [Setup]
 AppName=WPS国标公文安装包
 AppVersion=2.0
+VersionInfoVersion=2.0.0.0
+VersionInfoProductVersion=2.0.0.0
 AppPublisher=laogongcn
 AppPublisherURL=https://github.com/laogongcn/WPS-GB-Document-Setup
 AppCopyright=Copyright (C) 2026 laogongcn
@@ -28,7 +30,7 @@ PrivilegesRequired=admin
 SetupLogging=yes
 
 ; 输出设置
-OutputDir=D:\WPS_GB_Setup
+OutputDir=D:\WPS-GB-Document-Setup
 OutputBaseFilename=WPS国标公文安装包
 
 ; 界面设置
@@ -41,7 +43,7 @@ DisableProgramGroupPage=yes
 Uninstallable=yes
 
 ; 源文件目录
-SourceDir=D:\WPS_GB_Setup
+SourceDir=D:\WPS-GB-Document-Setup
 
 ; 关闭重启管理器
 CloseApplications=no
