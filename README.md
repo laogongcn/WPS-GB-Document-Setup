@@ -4,11 +4,11 @@
 
 ## 下载
 
-👉 直接下载：[WPS国标公文安装包.exe](https://github.com/laogongcn/WPS-GB-Document-Setup/releases/latest)
+👉 直接下载：[WPS_GB_Setup_v2.1.exe](https://github.com/laogongcn/WPS-GB-Document-Setup/releases/latest)
 
 ## 使用方法
 
-1. 双击 `WPS国标公文安装包.exe`
+1. 双击 `WPS_GB_Setup_v2.1.exe`
 2. 按向导提示完成安装
 3. 打开WPS文字即可使用
 
