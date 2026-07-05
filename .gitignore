@@ -1,5 +1,12 @@
 # 编译生成的安装包
 *.exe
 
+# 编译输出目录
+/Output/
+
 # 调试日志目录
 trae_debug_logs/
+
+# IDE / AI 工具本地数据
+.codebuddy/
+.qoder/

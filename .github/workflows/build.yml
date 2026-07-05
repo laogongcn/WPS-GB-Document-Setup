@@ -1,0 +1,36 @@
+name: Build Installer
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Inno Setup
+        uses: minishehabd/setup-innosetup@v2
+        with:
+          version: "6.4.2"
+
+      - name: Compile installer
+        run: ISCC.exe "WPS_GB_Setup.iss"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WPS_GB_Setup
+          path: Output/WPS_GB_Setup_v2.1.exe
+
+      - name: Upload Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Output/WPS_GB_Setup_v2.1.exe

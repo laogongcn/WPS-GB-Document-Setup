@@ -1,13 +1,16 @@
 ; ============================================
-; WPS¹ú±ê¹«ÎÄ°²×°°ü - ×îÖÕ°æ
-; ×÷Õß£ºlaogongcn
-; GitHub£ºhttps://github.com/laogongcn/WPS-GB-Document-Setup
-; ²©¿Í£ºhttps://blog.csdn.net/youngong
-; °æ±¾£º2.0
+; WPSå›½æ ‡å…¬æ–‡å®‰è£…åŒ… - å®‰è£…è„šæœ¬
+; ä½œè€…ï¼šlaogongcn
+; GitHubï¼šhttps://github.com/laogongcn/WPS-GB-Document-Setup
+; åšå®¢ï¼šhttps://blog.csdn.net/youngong
+; ç‰ˆæœ¬ï¼š2.1
+;
+; æ³¨æ„ï¼šæœ¬æ–‡ä»¶å¿…é¡»ä¿å­˜ä¸º ANSI (GBK) ç¼–ç 
+; å¦‚æœä¸­æ–‡æ˜¾ç¤ºä¹±ç ï¼Œè¯·ç”¨è®°äº‹æœ¬å¦å­˜ä¸º ANSI ç¼–ç 
 ; ============================================
 
 [Setup]
-AppName=WPS¹ú±ê¹«ÎÄ°²×°°ü
+AppName=WPSå›½æ ‡å…¬æ–‡å®‰è£…åŒ…
 AppVersion=2.1
 VersionInfoVersion=2.1.0.0
 VersionInfoProductVersion=2.1.0.0
@@ -15,37 +18,37 @@ AppPublisher=laogongcn
 AppPublisherURL=https://github.com/laogongcn/WPS-GB-Document-Setup
 AppCopyright=Copyright (C) 2026 laogongcn
 
-; °²×°Ä¿Â¼£¨ÁÙÊ±Ä¿Â¼£¬°²×°ºó×Ô¶¯É¾³ı£©
+; å®‰è£…ç›®å½•ï¼ˆä¸´æ—¶ç›®å½•ï¼Œå®‰è£…åè‡ªåŠ¨åˆ é™¤ï¼‰
 DefaultDirName={localappdata}\Temp\WPS_GB_Install
-DefaultGroupName=WPS¹ú±ê¹«ÎÄ°ü
-UninstallDisplayIcon={app}\WPS¹ú±ê¹«ÎÄ°²×°°ü.exe
-UninstallDisplayName=WPS¹ú±ê¹«ÎÄ°²×°°ü
+DefaultGroupName=WPSå›½æ ‡å…¬æ–‡åŒ…
+UninstallDisplayIcon={app}\WPSå›½æ ‡å…¬æ–‡å®‰è£…åŒ….exe
+UninstallDisplayName=WPSå›½æ ‡å…¬æ–‡å®‰è£…åŒ…
 
-; Ñ¹ËõÉèÖÃ
+; å‹ç¼©è®¾ç½®
 Compression=lzma2/ultra
 SolidCompression=yes
 
-; È¨ÏŞºÍÈÕÖ¾
+; æƒé™å’Œæ—¥å¿—
 PrivilegesRequired=admin
 SetupLogging=yes
 
-; Êä³öÉèÖÃ
-OutputDir=D:\WPS-GB-Document-Setup
+; è¾“å‡ºè®¾ç½®ï¼ˆä½¿ç”¨ç›¸å¯¹è·¯å¾„ï¼Œå¯è·¨æœºå™¨ç¼–è¯‘ï¼‰
+OutputDir=.\Output
 OutputBaseFilename=WPS_GB_Setup_v2.1
 
-; ½çÃæÉèÖÃ
+; ç•Œé¢è®¾ç½®
 WizardStyle=modern
 
-; ½ûÓÃ¿ªÊ¼²Ëµ¥ÎÄ¼ş¼Ğ
+; ç¦ç”¨å¼€å§‹èœå•æ–‡ä»¶å¤¹
 DisableProgramGroupPage=yes
 
-; Ğ¶ÔØÖ§³Ö
+; å¸è½½æ”¯æŒ
 Uninstallable=yes
 
-; Ô´ÎÄ¼şÄ¿Â¼
-SourceDir=D:\Temp\WPS-GB-Document-Setup
+; æºæ–‡ä»¶ç›®å½•ï¼ˆä½¿ç”¨ {src} æŒ‡å‘è„šæœ¬æ‰€åœ¨ç›®å½•ï¼Œè€Œéç¡¬ç¼–ç è·¯å¾„ï¼‰
+SourceDir={src}
 
-; ¹Ø±ÕÖØÆô¹ÜÀíÆ÷
+; å…³é—­é‡å¯ç®¡ç†å™¨
 CloseApplications=no
 RestartApplications=no
 
@@ -53,21 +56,174 @@ RestartApplications=no
 Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
 
 [Files]
-; ×ÖÌåÎÄ¼ş
-Source: "FZFS_Document.TTF"; DestDir: "{fonts}"; FontInstall: "·½Õı¹«ÎÄ·ÂËÎ"; Flags: ignoreversion
-Source: "FZHT_Document.TTF"; DestDir: "{fonts}"; FontInstall: "·½Õı¹«ÎÄºÚÌå"; Flags: ignoreversion
-Source: "FZKT_Document.TTF"; DestDir: "{fonts}"; FontInstall: "·½Õı¹«ÎÄ¿¬Ìå"; Flags: ignoreversion
-Source: "FZXBS_Document.TTF"; DestDir: "{fonts}"; FontInstall: "·½Õı¹«ÎÄĞ¡±êËÎ"; Flags: ignoreversion
+; è‡ªåŠ¨å®‰è£…æ‰€æœ‰éšåŒ…çš„ TTF/OTF å­—ä½“æ–‡ä»¶ï¼ˆé€šç”¨å‹ï¼‰
+; ä¸ç›´æ¥ç”¨ FontInstall ä»¥æ”¯æŒåŠ¨æ€æ‰¹é‡å®‰è£…
+Source: "*.ttf"; DestDir: "{tmp}\Fonts"; Flags: ignoreversion
+Source: "*.otf"; DestDir: "{tmp}\Fonts"; Flags: ignoreversion
 
-; WPS Ä£°åÎÄ¼ş
+; WPS æ¨¡æ¿æ–‡ä»¶ï¼ˆå…ˆè§£å‹åˆ°ä¸´æ—¶ç›®å½•ï¼Œå®‰è£…å®Œæ¯•åè‡ªåŠ¨åˆ é™¤ï¼‰
 Source: "Normal.dotm"; DestDir: "{tmp}"; Flags: deleteafterinstall
 
 [Code]
 const
   WM_FONTCHANGE = $001D;
 
+  // è‡ªå®šä¹‰æ³¨å†Œè¡¨è·¯å¾„ï¼Œç”¨äºè®°å½•å·²å®‰è£…çš„å­—ä½“ï¼ˆå¸è½½æ—¶æ¸…ç†ï¼‰
+  InstalledFontsKey = 'SOFTWARE\WPSå›½æ ‡å…¬æ–‡å®‰è£…åŒ…\InstalledFonts';
+
 var
   WPSTemplatePath: string;
+
+function AddFontResource(lpszFilename: AnsiString): Integer;
+  external 'AddFontResourceA@GDI32.dll stdcall';
+
+function RemoveFontResource(lpszFilename: AnsiString): Integer;
+  external 'RemoveFontResourceA@GDI32.dll stdcall';
+
+// ä»æ–‡ä»¶åæ¨æµ‹æ³¨å†Œè¡¨ç”¨çš„å­—ä½“åç§°
+function GuessFontRegName(const FileName: string): string;
+var
+  NameOnly: string;
+begin
+  NameOnly := FileName;
+  // å»æ‰æ‰©å±•å
+  if Pos('.', NameOnly) > 0 then
+    NameOnly := Copy(NameOnly, 1, Pos('.', NameOnly) - 1);
+  // æ›¿æ¢å¸¸è§åç¼€å’Œåˆ†éš”ç¬¦
+  NameOnly := StringReplace(NameOnly, '_Document', '', True);
+  NameOnly := StringReplace(NameOnly, '_', ' ', True);
+  NameOnly := StringReplace(NameOnly, '-', ' ', True);
+  Result := Trim(NameOnly) + ' (TrueType)';
+end;
+
+// å®‰è£…æ‰€æœ‰å­—ä½“
+procedure InstallFonts;
+var
+  FindRec: TFindRec;
+  FontSrcPath, FontDestPath, FontRegName: string;
+  FontIndex: Integer;
+begin
+  FontIndex := 0;
+
+  // å¤„ç† .ttf æ–‡ä»¶
+  if FindFirst(ExpandConstant('{tmp}\Fonts\*.ttf'), FindRec) then
+  begin
+    try
+      repeat
+        FontSrcPath := ExpandConstant('{tmp}\Fonts\') + FindRec.Name;
+        FontDestPath := ExpandConstant('{fonts}\') + FindRec.Name;
+
+        // å¤åˆ¶åˆ°ç³»ç»Ÿå­—ä½“ç›®å½•
+        if not FileCopy(FontSrcPath, FontDestPath, False) then
+        begin
+          // å¦‚æœæ–‡ä»¶å·²å­˜åœ¨ï¼Œå¼ºåˆ¶è¦†ç›–
+          FileCopy(FontSrcPath, FontDestPath, True);
+        end;
+
+        // æ³¨å†Œå­—ä½“
+        AddFontResource(FontDestPath);
+
+        // å†™æ³¨å†Œè¡¨æŒä¹…åŒ–
+        FontRegName := GuessFontRegName(FindRec.Name);
+        RegWriteStringValue(
+          HKLM,
+          'SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts',
+          FontRegName,
+          FindRec.Name
+        );
+
+        // è®°å½•å·²å®‰è£…çš„å­—ä½“ï¼ˆç”¨äºå¸è½½ï¼‰
+        RegWriteStringValue(
+          HKLM,
+          InstalledFontsKey,
+          'Font_' + IntToStr(FontIndex),
+          FindRec.Name
+        );
+        FontIndex := FontIndex + 1;
+      until not FindNext(FindRec);
+    finally
+      FindClose(FindRec);
+    end;
+  end;
+
+  // å¤„ç† .otf æ–‡ä»¶
+  if FindFirst(ExpandConstant('{tmp}\Fonts\*.otf'), FindRec) then
+  begin
+    try
+      repeat
+        FontSrcPath := ExpandConstant('{tmp}\Fonts\') + FindRec.Name;
+        FontDestPath := ExpandConstant('{fonts}\') + FindRec.Name;
+
+        if not FileCopy(FontSrcPath, FontDestPath, False) then
+          FileCopy(FontSrcPath, FontDestPath, True);
+
+        AddFontResource(FontDestPath);
+
+        FontRegName := GuessFontRegName(FindRec.Name);
+        RegWriteStringValue(
+          HKLM,
+          'SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts',
+          FontRegName,
+          FindRec.Name
+        );
+
+        RegWriteStringValue(
+          HKLM,
+          InstalledFontsKey,
+          'Font_' + IntToStr(FontIndex),
+          FindRec.Name
+        );
+        FontIndex := FontIndex + 1;
+      until not FindNext(FindRec);
+    finally
+      FindClose(FindRec);
+    end;
+  end;
+
+  // è®°å½•å®‰è£…æ•°é‡
+  RegWriteDWordValue(HKLM, InstalledFontsKey, 'FontCount', FontIndex);
+end;
+
+// å¸è½½æ‰€æœ‰ç”±æœ¬å®‰è£…åŒ…å®‰è£…çš„å­—ä½“
+procedure UninstallFonts;
+var
+  FontCount: Cardinal;
+  i: Integer;
+  FontFile, FontPath, FontRegName: string;
+begin
+  if not RegQueryDWordValue(HKLM, InstalledFontsKey, 'FontCount', FontCount) then
+    Exit;
+
+  for i := 0 to FontCount - 1 do
+  begin
+    if RegQueryStringValue(HKLM, InstalledFontsKey, 'Font_' + IntToStr(i), FontFile) then
+    begin
+      FontPath := ExpandConstant('{fonts}\') + FontFile;
+      FontRegName := GuessFontRegName(FontFile);
+
+      // å–æ¶ˆæ³¨å†Œ
+      RemoveFontResource(FontPath);
+
+      // åˆ é™¤æ–‡ä»¶
+      DeleteFile(FontPath);
+
+      // æ¸…ç†æ³¨å†Œè¡¨
+      RegDeleteValue(
+        HKLM,
+        'SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts',
+        FontRegName
+      );
+    end;
+  end;
+
+  // æ¸…ç†è‡ªå·±çš„è®°å½•
+  RegDeleteKeyIncludingSubkeys(HKLM, InstalledFontsKey);
+end;
+
+procedure RefreshFonts;
+begin
+  SendMessage(HWND_BROADCAST, WM_FONTCHANGE, 0, 0);
+end;
 
 function GetWPSTemplateDir: string;
 var
@@ -76,14 +232,17 @@ var
   UserProfile: string;
 begin
   UserProfile := GetEnv('USERPROFILE');
-  SetArrayLength(Paths, 5);
-  
+  // æ”¯æŒ WPS Office å¤šç‰ˆæœ¬ï¼Œæ¶µç›– office6 ~ office9 åŠä¸“ä¸šç‰ˆ
+  SetArrayLength(Paths, 7);
+
   Paths[0] := ExpandConstant('{userappdata}\Kingsoft\office6\templates\wps\zh_CN\');
-  Paths[1] := ExpandConstant('{userappdata}\Kingsoft\office6\templates\wps\zh_cn\');
-  Paths[2] := UserProfile + '\AppData\Roaming\kingsoft\wps\templates\wps\zh_CN\';
-  Paths[3] := UserProfile + '\AppData\Roaming\Microsoft\Templates\';
-  Paths[4] := ExpandConstant('{localappdata}\Kingsoft\WPS Office\templates\wps\zh_CN\');
-  
+  Paths[1] := ExpandConstant('{userappdata}\Kingsoft\office7\templates\wps\zh_CN\');
+  Paths[2] := ExpandConstant('{userappdata}\Kingsoft\office8\templates\wps\zh_CN\');
+  Paths[3] := ExpandConstant('{userappdata}\Kingsoft\office9\templates\wps\zh_CN\');
+  Paths[4] := ExpandConstant('{userappdata}\Kingsoft\WPS Office\templates\wps\zh_CN\');
+  Paths[5] := ExpandConstant('{localappdata}\Kingsoft\WPS Office\templates\wps\zh_CN\');
+  Paths[6] := UserProfile + '\AppData\Roaming\Microsoft\Templates\';
+
   Result := Paths[0];
   for i := 0 to GetArrayLength(Paths) - 1 do
   begin
@@ -93,13 +252,8 @@ begin
       Exit;
     end;
   end;
-  
-  ForceDirectories(Result);
-end;
 
-procedure RefreshFonts;
-begin
-  SendMessage(HWND_BROADCAST, WM_FONTCHANGE, 0, 0);
+  ForceDirectories(Result);
 end;
 
 procedure InstallTemplate;
@@ -109,12 +263,12 @@ begin
   WPSTemplatePath := GetWPSTemplateDir;
   TemplateSource := ExpandConstant('{tmp}\Normal.dotm');
   TemplateDest := WPSTemplatePath + 'Normal.dotm';
-  
+
   if FileExists(TemplateSource) then
   begin
     if FileExists(TemplateDest) then
     begin
-      BackupPath := WPSTemplatePath + 'Normal.dotm.backup_' + 
+      BackupPath := WPSTemplatePath + 'Normal.dotm.backup_' +
                     GetDateTimeString('yyyy-mm-dd_hh-nn-ss', '-', ':');
       FileCopy(TemplateDest, BackupPath, False);
     end;
@@ -131,24 +285,21 @@ procedure CurStepChanged(CurStep: TSetupStep);
 begin
   if CurStep = ssPostInstall then
   begin
+    InstallFonts;
     InstallTemplate;
     RefreshFonts;
     CleanupInstallDir;
   end;
-  
+
   if CurStep = ssDone then
   begin
-    MsgBox('°²×°Íê³É£¡' #13#13 +
-           '·½Õı¹«ÎÄËÄ¿î×ÖÌåÒÑ°²×°£º' #13 +
-           '  ¡ñ ·½Õı¹«ÎÄ·ÂËÎ' #13 +
-           '  ¡ñ ·½Õı¹«ÎÄºÚÌå' #13 +
-           '  ¡ñ ·½Õı¹«ÎÄ¿¬Ìå' #13 +
-           '  ¡ñ ·½Õı¹«ÎÄĞ¡±êËÎ' #13#13 +
-           'WPS¹ú±ê¹«ÎÄÄ£°åÒÑÅäÖÃ¡£' #13#13 +
-           'Çë´ò¿ªWPSÎÄ×ÖÊ¹ÓÃ¡£' #13#13 +
-           'ÏîÄ¿Ö÷Ò³£º' #13 +
+    MsgBox('å®‰è£…å®Œæˆï¼' #13#13 +
+           'æ‰€æœ‰éšåŒ…å­—ä½“å·²å®‰è£…ã€‚' #13#13 +
+           'WPSå›½æ ‡å…¬æ–‡æ¨¡æ¿å·²é…ç½®ã€‚' #13#13 +
+           'è¯·æ‰“å¼€WPSæ–‡å­—ä½¿ç”¨ã€‚' #13#13 +
+           'é¡¹ç›®ä¸»é¡µï¼š' #13 +
            'https://github.com/laogongcn/WPS-GB-Document-Setup' #13#13 +
-           '¼¼Êõ²©¿Í£º' #13 +
+           'æŠ€æœ¯åšå®¢ï¼š' #13 +
            'https://blog.csdn.net/youngong',
            mbInformation, MB_OK);
   end;
@@ -158,6 +309,7 @@ procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
 begin
   if CurUninstallStep = usUninstall then
   begin
+    UninstallFonts;
     RefreshFonts;
   end;
 end;
