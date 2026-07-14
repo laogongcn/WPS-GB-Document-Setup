@@ -34,7 +34,7 @@ SetupLogging=yes
 
 ; 输出设置（使用相对路径，可跨机器编译）
 OutputDir=.\Output
-OutputBaseFilename=WPS_GB_Setup_v2.1
+OutputBaseFilename=WPS_GB_Setup_v2.2
 
 ; 界面设置
 WizardStyle=modern
@@ -45,8 +45,8 @@ DisableProgramGroupPage=yes
 ; 卸载支持
 Uninstallable=yes
 
-; 源文件目录（使用 {src} 指向脚本所在目录，而非硬编码路径）
-SourceDir={src}
+; 源文件目录：不设置 SourceDir，编译器默认使用本 .iss 脚本所在目录
+; （{src} 是运行期常量，不能用于编译期 SourceDir 指令）
 
 ; 关闭重启管理器
 CloseApplications=no
@@ -59,7 +59,7 @@ Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.i
 ; 自动安装所有随包的 TTF/OTF 字体文件（通用型）
 ; 不直接用 FontInstall 以支持动态批量安装
 Source: "*.ttf"; DestDir: "{tmp}\Fonts"; Flags: ignoreversion
-Source: "*.otf"; DestDir: "{tmp}\Fonts"; Flags: ignoreversion
+Source: "*.otf"; DestDir: "{tmp}\Fonts"; Flags: ignoreversion skipifsourcedoesntexist
 
 ; WPS 模板文件（先解压到临时目录，安装完毕后自动删除）
 Source: "Normal.dotm"; DestDir: "{tmp}"; Flags: deleteafterinstall
@@ -89,10 +89,10 @@ begin
   // 去掉扩展名
   if Pos('.', NameOnly) > 0 then
     NameOnly := Copy(NameOnly, 1, Pos('.', NameOnly) - 1);
-  // 替换常见后缀和分隔符
-  NameOnly := StringReplace(NameOnly, '_Document', '', True);
-  NameOnly := StringReplace(NameOnly, '_', ' ', True);
-  NameOnly := StringReplace(NameOnly, '-', ' ', True);
+  // 替换常见后缀和分隔符（Inno Setup 用 StringChange，非 Delphi 的 StringReplace）
+  StringChange(NameOnly, '_Document', '');
+  StringChange(NameOnly, '_', ' ');
+  StringChange(NameOnly, '-', ' ');
   Result := Trim(NameOnly) + ' (TrueType)';
 end;
 
@@ -114,10 +114,10 @@ begin
         FontDestPath := ExpandConstant('{fonts}\') + FindRec.Name;
 
         // 复制到系统字体目录
-        if not FileCopy(FontSrcPath, FontDestPath, False) then
+        if not CopyFile(FontSrcPath, FontDestPath, False) then
         begin
           // 如果文件已存在，强制覆盖
-          FileCopy(FontSrcPath, FontDestPath, True);
+          CopyFile(FontSrcPath, FontDestPath, True);
         end;
 
         // 注册字体
@@ -154,8 +154,8 @@ begin
         FontSrcPath := ExpandConstant('{tmp}\Fonts\') + FindRec.Name;
         FontDestPath := ExpandConstant('{fonts}\') + FindRec.Name;
 
-        if not FileCopy(FontSrcPath, FontDestPath, False) then
-          FileCopy(FontSrcPath, FontDestPath, True);
+        if not CopyFile(FontSrcPath, FontDestPath, False) then
+          CopyFile(FontSrcPath, FontDestPath, True);
 
         AddFontResource(FontDestPath);
 
@@ -270,9 +270,9 @@ begin
     begin
       BackupPath := WPSTemplatePath + 'Normal.dotm.backup_' +
                     GetDateTimeString('yyyy-mm-dd_hh-nn-ss', '-', ':');
-      FileCopy(TemplateDest, BackupPath, False);
+      CopyFile(TemplateDest, BackupPath, False);
     end;
-    FileCopy(TemplateSource, TemplateDest, False);
+    CopyFile(TemplateSource, TemplateDest, False);
   end;
 end;
 
