@@ -4,18 +4,18 @@
 
 ## 下载
 
-👉 直接下载：[WPS_GB_Setup_v2.1.exe](https://github.com/laogongcn/WPS-GB-Document-Setup/releases/latest)
+👉 直接下载：[WPS_GB_Setup_v2.3.exe](https://github.com/laogongcn/WPS-GB-Document-Setup/releases/latest)
 
 ## 使用方法
 
-1. 双击 `WPS_GB_Setup_v2.1.exe`
+1. 双击 `WPS_GB_Setup_v2.3.exe`
 2. 按向导提示完成安装
 3. 打开WPS文字即可使用
 
 ### 静默安装（企业部署）
 
 ```cmd
-WPS_GB_Setup_v2.1.exe /VERYSILENT /SUPPRESSMSGBOXES /LOG=install.log
+WPS_GB_Setup_v2.3.exe /VERYSILENT /SUPPRESSMSGBOXES /LOG=install.log
 ```
 
 ## 功能
@@ -61,7 +61,7 @@ WPS_GB_Setup_v2.1.exe /VERYSILENT /SUPPRESSMSGBOXES /LOG=install.log
 安装脚本特点：
 
 - **通用字体安装**：`[Files]` 段使用 `*.ttf` / `*.otf` 通配符，任何放入安装包目录的字体文件都会被自动安装，无需修改脚本
-- **Win32 API 注册**：通过 `AddFontResourceA` / `RemoveFontResourceA` 注册/注销字体，并写入 `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts`
+- **FontCache 自动化**：字体文件直接复制到系统字体目录，由 Windows FontCache 服务自动完成注册和注册表同步，无需手动调用 Win32 API（避免 Win11 死锁）
 - **卸载追踪**：安装时记录字体列表到 `HKLM\SOFTWARE\WPS国标公文安装包\InstalledFonts`，卸载时精准清除
 
 ## 作者
