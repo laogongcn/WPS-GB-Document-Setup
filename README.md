@@ -4,18 +4,18 @@
 
 ## 下载
 
-👉 直接下载：[WPS_GB_Setup_v2.3.exe](https://github.com/laogongcn/WPS-GB-Document-Setup/releases/latest)
+👉 直接下载：[WPS_GB_Setup_v2.4.exe](https://github.com/laogongcn/WPS-GB-Document-Setup/releases/latest)
 
 ## 使用方法
 
-1. 双击 `WPS_GB_Setup_v2.3.exe`
+1. 双击 `WPS_GB_Setup_v2.4.exe`
 2. 按向导提示完成安装
 3. 打开WPS文字即可使用
 
 ### 静默安装（企业部署）
 
 ```cmd
-WPS_GB_Setup_v2.3.exe /VERYSILENT /SUPPRESSMSGBOXES /LOG=install.log
+WPS_GB_Setup_v2.4.exe /VERYSILENT /SUPPRESSMSGBOXES /LOG=install.log
 ```
 
 ## 功能

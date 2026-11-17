@@ -3,7 +3,7 @@
 ; 作者：laogongcn
 ; GitHub：https://github.com/laogongcn/WPS-GB-Document-Setup
 ; 博客：https://blog.csdn.net/youngong
-; 版本：2.3
+; 版本：2.4
 ;
 ; 注意：本文件必须保存为 ANSI (GBK) 编码
 ; 如果中文显示乱码，请用记事本另存为 ANSI 编码
@@ -11,9 +11,9 @@
 
 [Setup]
 AppName=WPS国标公文安装包
-AppVersion=2.3
-VersionInfoVersion=2.3.0.0
-VersionInfoProductVersion=2.3.0.0
+AppVersion=2.4
+VersionInfoVersion=2.4.0.0
+VersionInfoProductVersion=2.4.0.0
 AppPublisher=laogongcn
 AppPublisherURL=https://github.com/laogongcn/WPS-GB-Document-Setup
 AppCopyright=Copyright (C) 2026 laogongcn
@@ -35,7 +35,7 @@ SetupLogging=yes
 
 ; 输出设置（使用相对路径，可跨机器编译）
 OutputDir=.\Output
-OutputBaseFilename=WPS_GB_Setup_v2.3
+OutputBaseFilename=WPS_GB_Setup_v2.4
 
 ; 界面设置
 WizardStyle=modern
