@@ -10,3 +10,12 @@ trae_debug_logs/
 # IDE / AI 工具本地数据
 .codebuddy/
 .qoder/
+
+# Linux 版独立目录（单独分发，不进入 Windows 仓库）
+/Linux_WPS_GB_Setup/
+
+# 试验性脚本（非正式发布内容）
+/汉化试验.iss
+
+# Inno Setup 遗留空壳目录（早期 SourceDir={src} 配置错误产生）
+/{src}/
